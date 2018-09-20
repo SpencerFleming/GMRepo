@@ -1,0 +1,92 @@
+* {
+	/* Changing default settings */
+	margin: 0;
+	border: none;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+	background-color: <?=$site_bg?>;
+    height: 100%;
+}
+
+/* topbar things */
+
+.topbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 48px;
+	background-color: <?=$tbar_bg?>;
+}
+
+.topbar ul {
+	list-style-type: none;
+	float: left;
+	width: auto;
+	height: 100%;
+	overflow: hidden;
+}
+
+.topbar li {
+	float: left;
+	height: 100%;
+}
+
+.topbar label {
+	background-color: <?=$tbar_bg?>;
+	width: 48px;
+	height: 100%;	
+	display: inline-block;
+    outline: none;
+    text-align: center;
+}
+
+.topbar label input {
+    display: none;
+}
+
+.topbar input + i {
+    position: relative;
+    top: calc(50% - 18px);
+    color: <?=$tbar_fg?>; 
+    font-size: 36px;
+}
+
+.topbar label:hover {
+	background-color: <?=$tbar_bg_hover?>;
+}
+
+.activelabel {
+    display: none;
+}
+
+.topbar input:checked + .activelabel {
+    /* The plan was to place a div that looked like the menu button 
+    INSIDE the menu button, so it would be rendered over it when the
+    button was checked. But, it doesn't seem to work, so we will have
+    to simply modify the button with javascript when we get there.
+    For now it'll work just not how we want for the final product.*/
+}
+
+#tbarlogo {
+	float: right;
+}
+
+/* sidebar things */
+
+.sidebar {
+    position:absolute;
+    z-index:-1;
+    display: block;
+    top: 48px;
+    width: 260px;
+    height: 100%;
+    padding: 16px;
+    background-color: <?=$sbar_bg?>;
+}

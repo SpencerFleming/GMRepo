@@ -1,17 +1,12 @@
 <?php
-	header("Content-type: text/css");
-	$sitebg = '#1a1a1a';
-	$mainbg = '#777777';
-	$tbarbg = '#373737';
+	header("Content-Type: text/css");
+	$site_bg        = '#1a1a1a';
+	$body_bg        = '#777777';
+    $tbar_bg        = '#373737';
+    $tbar_fg        = '#a6a6a6';
+	$tbar_bg_hover  = '#777777';
+    $tbar_bg_active = '#AAAAAA';
+    $sbar_bg        = '#a6a6a6';
 ?>
 
-.topbarbutton {
-	background-color: <?=$tbarbg?>;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-}
+<?php include_once("theme.css"); ?>
