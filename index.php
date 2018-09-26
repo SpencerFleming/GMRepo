@@ -1,7 +1,12 @@
+<?php
+    $username = 'Cool McGuy';
+?>
+
 <!DOCTYPE html>
 <html>
 	<header>
-		<title>GMRepo</title>
+        <title>GMRepo</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" type="text/css" href="/theme.php">
 	</header>
@@ -25,19 +30,54 @@
         <div class="sidebar">
             <!-- Holds user inonfo and some control buttons -->
             <div class="userinfo">
-                <img id="profpic" src="images/DefaultProfile.png" alt="Profile Picture"/>
-                <h1> Cool Guy </h1>
+                <ul class="usercontrols">
+                    <li>
+                        <img class="profpic" src="images/DefaultProfile.png" alt="Profile Picture"/>
+                    </li>
+                    <li id="settingbutton">
+                        <button type="button">
+                            <i class="material-icons">settings</i>
+                        </button>
+                    </li>
+                    <h1> <?=$username?> </h1>
             </div>
 
             <!-- List of categories -->
             <ul class="categorylist">
-                
+                <li>
+                    <h2>Creatures</h2>
+                </li>
+                <li>
+                    <h2>Items</h2>
+                </li>
+                <li>
+                    <h2>Etc.</h2>
+                </li>
+                <li>
+                    <h2>^ Static Examples</h2>
+                </li>
             </ul>
 
             <!-- Some space for buttons below the categories -->
             <ul class="categorycontrol">
 
             </ul>
+        </div>
+        
+        <!-- Main body of text -->
+        <div class="main">
+            <h1>A digital organizer that's <em>actually</em> faster than ole' pen and paper.</h1>
+            <p>Note: Site is static right now and under construction.</p>
+            <p>Also: This site will mostly be displayed on this one page.
+            Currently the plan is to pull from the database dynamically from
+            this one page so users don't need to keep multiple tabs open.
+            </p>
+
+        </div>
+
+        <div class="footer">
+            <a href="index.php">App</a>
+            <a href="about.php">About</a>
         </div>
 	</body>
 </html>

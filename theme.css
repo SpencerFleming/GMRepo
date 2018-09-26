@@ -1,23 +1,20 @@
 * {
 	/* Changing default settings */
+    font-family: <?=$site_font?>;
 	margin: 0;
 	border: none;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-html {
-    height: 100%;
-}
-
 body {
 	background-color: <?=$site_bg?>;
-    height: 100%;
 }
 
 /* topbar things */
 
 .topbar {
+    z-index: 2;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -81,12 +78,121 @@ body {
 /* sidebar things */
 
 .sidebar {
-    position:absolute;
-    z-index:-1;
+    position:fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
     display: block;
     top: 48px;
     width: 260px;
     height: 100%;
-    padding: 16px;
     background-color: <?=$sbar_bg?>;
+}
+
+.profpic {
+    background-color: white;
+    border-radius: 100%;
+}
+
+.userinfo {
+    padding: 16px;
+    font-size: 14px;
+    height: 140px;
+    background: <?=$user_info_bg?>; 
+}
+
+.userinfo ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+.userinfo li {
+    float: left;
+}
+
+.sidebar .profpic {
+    width: 48px;
+    height: 48px;
+}
+
+#settingbutton {
+    float: right;
+    width: 48px;
+    height: 48px;
+}
+
+#settingbutton button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: <?=$user_info_bg?>;
+}
+
+#settingbutton i {
+    position: relative;
+    top: calc(50% - 18px);
+    font-size: 36px;
+}
+
+#settingbutton:hover i {
+    color: <?=$tbar_fg?>;
+}
+
+.sidebar h1 {
+    padding: 16px 0px;
+    clear: both;
+}
+
+.categorylist {
+    list-style-type: none;
+}
+
+.categorylist li {
+    display: block;
+    width: 100%;
+    padding: 8px 8px;
+}
+
+.categorylist li:hover {
+    background-color: <?=$sbar_hl?>;
+}
+
+.main {
+    width: 100%;
+    height 100%;
+}
+
+.main h1 {
+    color: white;
+    margin: auto;
+    margin-top: 200px;
+    width: 33%;
+    text-align: center;
+}
+
+.main p {
+    color: white;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.main a {
+    color: <?=$tbar_fg?>;
+}
+
+.footer {
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: <?=$tbar_bg?>;
+    color: white;
+    text-align: center;
+}
+
+.footer a {
+    padding: 0px 8px;
+    color: <?=$tbar_fg?>;
 }
