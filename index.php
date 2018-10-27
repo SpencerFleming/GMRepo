@@ -4,30 +4,31 @@
 
 <!DOCTYPE html>
 <html>
-	<header>
+    <header>
+        <script src="menuScript.js"></script>
         <title>GMRepo</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" type="text/css" href="/theme.php">
-	</header>
-	<body>
-		<div class="topbar">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="/theme.php">
+    </header>
+    <body>
+        <div class="topbar">
             <!-- unordered list in case there are more buttons on the top bar eventually -->
-			<ul>
-				<li>
-					<label>
+            <ul>
+                <li>
+                    <label id="menubutton">
                         <input type="checkbox">
-					    <i class="material-icons">menu</i>
-					</label>
-				</li>
-			</ul>
+                        <i class="material-icons" onclick="toggleMenu()">menu</i>
+                    </label>
+                </li>
+            </ul>
 
             <!-- The all-important logo, which will kind of hang off the side -->
-			<img id="tbarlogo" src="logo/logo_128px.png" alt="GMRepo Logo"/>
-		</div>
+            <img id="tbarlogo" src="logo/logo_128px.png" alt="GMRepo Logo"/>
+        </div>
 
         <!-- This is the drawer that will slide in and out. It will be pinnable -->
-        <div class="sidebar">
+        <div class="sidebar" id="sbar">
             <!-- Holds user inonfo and some control buttons -->
             <div class="userinfo">
                 <ul class="usercontrols">
@@ -63,15 +64,22 @@
 
             </ul>
         </div>
-        
-        <!-- Main body of text -->
-        <div class="main">
-            <h1>A digital organizer that's <em>actually</em> faster than ole' pen and paper.</h1>
-            <p>Note: Site is static right now and under construction.</p>
-            <p>Also: This site will mostly be displayed on this one page.
-            Currently the plan is to pull from the database dynamically from
-            this one page so users don't need to keep multiple tabs open.
-            </p>
+
+        <!-- Things that need to get pushed aside by sidebar -->
+        <div id="pushAside">
+
+            <!-- Main body of text -->
+            <div class="main">
+                <h1>A digital organizer that's <em>actually</em> 
+                    faster than ole' pen and paper.
+                    </h1>
+                <p>Note: Site is static right now and under construction.</p>
+                <p>Also: This site will mostly be displayed on this one page.
+                Currently the plan is to pull from the database dynamically from
+                this one page so users don't need to keep multiple tabs open.
+                </p>
+
+            </div>
 
         </div>
 
@@ -79,5 +87,5 @@
             <a href="index.php">App</a>
             <a href="about.php">About</a>
         </div>
-	</body>
+    </body>
 </html>

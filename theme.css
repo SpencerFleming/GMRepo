@@ -1,45 +1,45 @@
 * {
-	/* Changing default settings */
+    /* Changing default settings */
     font-family: <?=$site_font?>;
-	margin: 0;
-	border: none;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	background-color: <?=$site_bg?>;
+    background-color: <?=$site_bg?>;
 }
 
 /* topbar things */
 
 .topbar {
     z-index: 2;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 48px;
-	background-color: <?=$tbar_bg?>;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 48px;
+    background-color: <?=$tbar_bg?>;
 }
 
 .topbar ul {
-	list-style-type: none;
-	float: left;
-	width: auto;
-	height: 100%;
-	overflow: hidden;
+    list-style-type: none;
+    float: left;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
 }
 
 .topbar li {
-	float: left;
-	height: 100%;
+    float: left;
+    height: 100%;
 }
 
 .topbar label {
-	background-color: <?=$tbar_bg?>;
-	width: 48px;
-	height: 100%;	
-	display: inline-block;
+    background-color: <?=$tbar_bg?>;
+    width: 48px;
+    height: 100%;
+    display: inline-block;
     outline: none;
     text-align: center;
 }
@@ -51,28 +51,25 @@ body {
 .topbar input + i {
     position: relative;
     top: calc(50% - 18px);
-    color: <?=$tbar_fg?>; 
+    color: <?=$tbar_fg?>;
     font-size: 36px;
 }
 
 .topbar label:hover {
-	background-color: <?=$tbar_bg_hover?>;
+    background-color: <?=$tbar_bg_hover?>;
 }
 
 .activelabel {
     display: none;
 }
 
-.topbar input:checked + .activelabel {
-    /* The plan was to place a div that looked like the menu button 
-    INSIDE the menu button, so it would be rendered over it when the
-    button was checked. But, it doesn't seem to work, so we will have
-    to simply modify the button with javascript when we get there.
-    For now it'll work just not how we want for the final product.*/
+.sidebar #menubutton.activated {
+    background-color: <?=$tbar_active?>;
+    color: WHITE;
 }
 
 #tbarlogo {
-	float: right;
+    float: right;
 }
 
 /* sidebar things */
@@ -80,13 +77,13 @@ body {
 .sidebar {
     position:fixed;
     overflow-x: hidden;
-    overflow-y: auto;
     z-index: 1;
     display: block;
     top: 48px;
-    width: 260px;
+    width: 0px; /* Adjusted by javascript, actual width in there */
     height: 100%;
     background-color: <?=$sbar_bg?>;
+    transition: 0.3s;
 }
 
 .profpic {
@@ -98,7 +95,7 @@ body {
     padding: 16px;
     font-size: 14px;
     height: 140px;
-    background: <?=$user_info_bg?>; 
+    background: <?=$user_info_bg?>;
 }
 
 .userinfo ul {
@@ -157,6 +154,10 @@ body {
     background-color: <?=$sbar_hl?>;
 }
 
+#pushAside {
+    transition: margin-left .5s;
+}
+
 .main {
     width: 100%;
     height 100%;
@@ -165,8 +166,8 @@ body {
 .main h1 {
     color: white;
     margin: auto;
-    margin-top: 200px;
-    width: 33%;
+    margin-top: 100px;
+    width: 40%;
     text-align: center;
 }
 
@@ -174,6 +175,7 @@ body {
     color: white;
     width: 50%;
     margin: auto;
+    margin-top: 15px;
     text-align: center;
 }
 
@@ -182,7 +184,7 @@ body {
 }
 
 .footer {
-    z-index: 0;
+    z-index: 1;
     position: fixed;
     left: 0;
     bottom: 0;
