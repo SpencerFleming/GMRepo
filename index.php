@@ -73,10 +73,7 @@
                 <h1>A digital organizer that's <em>actually</em> 
                     faster than ole' pen and paper.
                     </h1>
-                <p>Note: Site is static right now and under construction.</p>
-                <p>Also: This site will mostly be displayed on this one page.
-                Currently the plan is to pull from the database dynamically from
-                this one page so users don't need to keep multiple tabs open.
+                <p> Note: Site is still under construction!
                 </p>
 
             </div>
