@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once "topbar.php";
+$listitems = array();
+?>
 <!DOCTYPE html>
 <html>
     <header>
@@ -6,16 +11,11 @@
         <link rel="stylesheet" type="text/css" href="theme.php">
     </header>
     <body>
-        <div class="topbar">
-            <img id="tbarlogo" src="logo/logo_128px.png" alt="GMRepo Logo"/>
-        </div>
+        <?php genTopbar($listitems); ?>
         <div class="main">
             <h1>Under construction!</h1>
             <p><a href="index.php">Go back</a></p>
         </div>
 
-        <div class="footer">
-            <a href="index.php">App</a>
-            <a href="about.php">About</a>
-        </div>
+        <?php include_once "footer.php"; ?>
     </body>

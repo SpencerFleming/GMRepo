@@ -94,7 +94,7 @@ body {
 .userinfo {
     padding: 16px;
     font-size: 14px;
-    height: 140px;
+    min-height: 140px;
     background: <?=$user_info_bg?>;
 }
 
@@ -110,6 +110,15 @@ body {
 .sidebar .profpic {
     width: 48px;
     height: 48px;
+}
+
+.userinfo h1 {
+    float: right;
+}
+
+#LOGIN div {
+    display: block;
+    width: 100%;
 }
 
 #settingbutton {
@@ -181,6 +190,74 @@ body {
 
 .main a {
     color: <?=$tbar_fg?>;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    margin: 6px 0px;
+    padding: 5px 5px;
+}
+
+input[type=submit] {
+    font-weight: bold;
+    width: 100%;
+    margin: 6px 0px;
+    padding: 5px 5px;
+    color: white;
+    background-color: <?=$sbar_selected?>;
+}
+
+.login a {
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 6px 0px;
+    padding: 5px 5px;
+    color: <?=$hyperlinks?>;
+    background-color: <?=$sbar_bg?>;
+}
+
+.login h1 {
+    float: none;
+    font-size = 10pt;
+}
+
+.login label {
+    font-weight: bold;
+}
+
+#newuser {
+    padding-bottom: 30px;
+}
+
+#newuser div {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 33%;
+}
+
+#newuser div label {
+    color: white;
+    font-weight: bold;
+    font-size: 12pt;
+    float: left;
+}
+
+#newuser input[type=submit] {
+    margin-top: 28px;
+    padding: 5px;
+    background-color: <?=$sbar_selected?>;
+}
+
+.statusmsg {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    background-color: <?=$sbar_selected?>;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
 .footer {

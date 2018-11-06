@@ -1,5 +1,37 @@
 <?php
-    $username = 'Cool McGuy';
+// index.php
+    error_reporting(E_ALL);
+    ini_set('display_errors',1);
+
+    session_start();
+    require_once "Dao.php";
+    require_once "topbar.php";
+
+    $email_preset = "";
+    if (isset($_SESSION["email_preset"])) {
+        $email = $_SESSION["email_preset"];
+    }
+
+    $status = "";
+    if (isset($_SESSION["status"])) {
+        $status = $_SESSION["status"];
+    }
+
+    $email = "";
+    if (isset($_SESSION["email"])) {
+        $email = $_SESSION["email"];
+    }
+
+    $username = "Guest";
+    if (isset($_SESSION["username"])) {
+        $username = $_SESSION["username"];
+    }
+
+    $listitems = array(
+        '<label id="menubutton">
+            <input type="checkbox">
+            <i class="material-icons" onclick="toggleMenu()">menu</i>
+        </label>');
 ?>
 
 <!DOCTYPE html>
@@ -12,26 +44,15 @@
         <link rel="stylesheet" type="text/css" href="/theme.php">
     </header>
     <body>
-        <div class="topbar">
-            <!-- unordered list in case there are more buttons on the top bar eventually -->
-            <ul>
-                <li>
-                    <label id="menubutton">
-                        <input type="checkbox">
-                        <i class="material-icons" onclick="toggleMenu()">menu</i>
-                    </label>
-                </li>
-            </ul>
 
-            <!-- The all-important logo, which will kind of hang off the side -->
-            <img id="tbarlogo" src="logo/logo_128px.png" alt="GMRepo Logo"/>
-        </div>
+        <?php genTopbar($listitems); ?>
 
         <!-- This is the drawer that will slide in and out. It will be pinnable -->
         <div class="sidebar" id="sbar">
-            <!-- Holds user inonfo and some control buttons -->
+            <!-- Holds user info and some control buttons -->
             <div class="userinfo">
                 <ul class="usercontrols">
+                    <?php if (isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]) { ?>
                     <li>
                         <img class="profpic" src="images/DefaultProfile.png" alt="Profile Picture"/>
                     </li>
@@ -40,7 +61,35 @@
                             <i class="material-icons">settings</i>
                         </button>
                     </li>
+                    <li>
+                        <form action="logout.php" method="POST">
+                            <input type="submit" name="logout" value="Logout">
+                        </form>
+                    </li>
                     <h1> <?=$username?> </h1>
+                    <?php } else { ?>
+                    <div class="login">
+                        <h1> Login </h1>
+                        <?php if ($status != "") {
+                            echo '<p class="statusmsg">' . $status . '</p>';
+                        } ?>
+                        <form action="login_handler.php" method="POST" id="LOGIN">
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" value="<?php echo $email_preset; ?>"/>
+                            </div>
+                            <div>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" value=""/>
+                            </div>
+                            <div>
+                                <input type="submit" name="submit" id="login" value="Login"/>
+                            </div>
+                        </form>
+                        <a href="newuser.php">Create New Account</a>
+                    </div>
+                    <?php }; ?>
+                </ul>
             </div>
 
             <!-- List of categories -->
@@ -80,9 +129,6 @@
 
         </div>
 
-        <div class="footer">
-            <a href="index.php">App</a>
-            <a href="about.php">About</a>
-        </div>
+        <?php include_once "footer.php"; ?>
     </body>
 </html>
