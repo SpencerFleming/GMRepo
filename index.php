@@ -37,6 +37,7 @@
 <!DOCTYPE html>
 <html>
     <header>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="menuScript.js"></script>
         <title>GMRepo</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
