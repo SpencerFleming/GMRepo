@@ -7,23 +7,18 @@
     require_once "Dao.php";
     require_once "topbar.php";
 
-    $email_preset = "";
-    if (isset($_SESSION["email_preset"])) {
-        $email = $_SESSION["email_preset"];
-    }
-
     $status = "";
     if (isset($_SESSION["status"])) {
         $status = $_SESSION["status"];
     }
 
     $email = "";
-    if (isset($_SESSION["email"])) {
+    if ($status == "access_granted" && isset($_SESSION["email"])) {
         $email = $_SESSION["email"];
     }
 
     $username = "Guest";
-    if (isset($_SESSION["username"])) {
+    if ($status == "access_granted" && isset($_SESSION["username"])) {
         $username = $_SESSION["username"];
     }
 
@@ -39,6 +34,7 @@
     <header>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="menuScript.js"></script>
+        <script src="newUser.js"></script>
         <title>GMRepo</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -70,24 +66,19 @@
                     <h1> <?=$username?> </h1>
                     <?php } else { ?>
                     <div class="login">
-                        <h1> Login </h1>
-                        <?php if ($status != "") {
-                            echo '<p class="statusmsg">' . $status . '</p>';
-                        } ?>
-                        <form action="login_handler.php" method="POST" id="LOGIN">
-                            <div>
-                                <label for="email">Email</label>
-                                <input type="text" name="email" id="email" value="<?php echo $email_preset; ?>"/>
-                            </div>
-                            <div>
-                                <label for="password">Password</label>
-                                <input type="password" name="password" id="password" value=""/>
-                            </div>
-                            <div>
-                                <input type="submit" name="submit" id="login" value="Login"/>
-                            </div>
-                        </form>
-                        <a href="newuser.php">Create New Account</a>
+                        <p><?php $_SESSION['isNewUser']; ?></p>
+                        <?php
+                            if (isset($_SESSION['isNewUser']) && $_SESSION['isNewUser'] == "True") {
+                                ob_start();
+                                include_once("newuser.php");
+                                echo ob_get_clean();
+                            }
+                            else {
+                                ob_start();
+                                include_once("existingUser.php");
+                                echo ob_get_clean();
+                            }
+                        ?>
                     </div>
                     <?php }; ?>
                 </ul>
