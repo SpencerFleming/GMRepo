@@ -1,14 +1,18 @@
 function loadNewUserPage() {
-    $(".login").replaceWith($.get("newuser.php", "html"));
+    $(".login").empty();
+    $(".login").load("newuser.php");
     $.post("loginStatus.php", {"isNewUser":"True"});
 }
 
 function loadExistingUserPage() {
-    $(".login").replaceWith($.get("existingUser.php", "html"));
+    $(".login").empty();
+    $(".login").load("existingUser.php");
     $.post("loginStatus.php", {"isNewUser":"False"});
 }
 
-$(document).ready(function() {
-    $("#newUserButton").click(loadNewUserPage());
-    $("#existingUserButton").click(loadExistingUserPage());
-} );
+function onReady() {
+    $(".login").on("click", "#newUserButton", loadNewUserPage);
+    $(".login").on("click", "#existingUserButton", loadExistingUserPage);
+}
+
+$(document).ready(onReady);

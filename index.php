@@ -63,10 +63,10 @@
                             <input type="submit" name="logout" value="Logout">
                         </form>
                     </li>
-                    <h1> <?=$username?> </h1>
+                    <h1> <?php echo $username; ?> </h1>
                     <?php } else { ?>
                     <div class="login">
-                        <p><?php $_SESSION['isNewUser']; ?></p>
+                    <p><?php echo $_SESSION['isNewUser']; ?></p>
                         <?php
                             if (isset($_SESSION['isNewUser']) && $_SESSION['isNewUser'] == "True") {
                                 ob_start();

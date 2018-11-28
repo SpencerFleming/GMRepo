@@ -31,5 +31,5 @@
             <input type="submit" name="submit" id="login" value="Login"/>
         </div>
     </form>
-        <button id="newUserButton">Create New Account</button>
+    <button id="newUserButton">Create New Account</button>
 </div>
