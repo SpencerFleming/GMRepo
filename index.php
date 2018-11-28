@@ -35,6 +35,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="menuScript.js"></script>
         <script src="newUser.js"></script>
+        <script src="awareFooter.js"></script>
         <title>GMRepo</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -66,7 +67,6 @@
                     <h1> <?php echo $username; ?> </h1>
                     <?php } else { ?>
                     <div class="login">
-                    <p><?php echo $_SESSION['isNewUser']; ?></p>
                         <?php
                             if (isset($_SESSION['isNewUser']) && $_SESSION['isNewUser'] == "True") {
                                 ob_start();
