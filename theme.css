@@ -116,11 +116,6 @@ body {
     float: right;
 }
 
-#LOGIN div {
-    display: block;
-    width: 100%;
-}
-
 #settingbutton {
     float: right;
     width: 48px;
@@ -227,29 +222,6 @@ input[type=submit] {
     font-weight: bold;
 }
 
-#newuser {
-    padding-bottom: 30px;
-}
-
-#newuser div {
-    margin: auto;
-    margin-bottom: 10px;
-    width: 33%;
-}
-
-#newuser div label {
-    color: white;
-    font-weight: bold;
-    font-size: 12pt;
-    float: left;
-}
-
-#newuser input[type=submit] {
-    margin-top: 28px;
-    padding: 5px;
-    background-color: <?=$sbar_selected?>;
-}
-
 .statusmsg {
     display: block;
     text-align: center;
@@ -274,4 +246,14 @@ input[type=submit] {
 .footer a {
     padding: 0px 8px;
     color: <?=$tbar_fg?>;
+}
+
+.loadingCover {
+    background-color: <?=$user_info_bg?>;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
