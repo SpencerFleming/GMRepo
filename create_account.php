@@ -10,7 +10,7 @@ function failAccount($status) {
     $_SESSION["status"] = $status;
     $_SESSION["email_preset"] = $_POST["email"];
     $_SESSION["username_preset"] = $_POST["username"];
-    header("Location:newuser.php");
+    header("Location:index.php");
     exit();
 }
 
