@@ -13,12 +13,14 @@
     }
 
     $email = "";
-    if ($status == "access_granted" && isset($_SESSION["email"])) {
+    if (isset($_SESSION["access_granted"])
+        && $_SESSION["access_granted"] && isset($_SESSION["email"])) {
         $email = $_SESSION["email"];
     }
 
     $username = "Guest";
-    if ($status == "access_granted" && isset($_SESSION["username"])) {
+    if (isset($_SESSION["access_granted"])
+        && $_SESSION["access_granted"] && isset($_SESSION["username"])) {
         $username = $_SESSION["username"];
     }
 
