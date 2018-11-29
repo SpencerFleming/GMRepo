@@ -66,6 +66,7 @@ if ($_POST["password"] != $_POST["passwordconf"]) {
 
 // Pass account if there are no problems.
 $_SESSION["status"] = "Account created!";
+$_SESSION["isNewUser"] = "False";
 $dao->CreateUser($_POST["username"],$_POST["email"],$_POST["password"]);
 header("Location:index.php");
 ?>
