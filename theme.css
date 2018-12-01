@@ -109,6 +109,8 @@ body {
 
 .userinfo li {
     float: left;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .sidebar .profpic {
