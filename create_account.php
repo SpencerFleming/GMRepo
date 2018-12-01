@@ -20,19 +20,19 @@ $status = "";
 
 // Fail if email is invalid
 if ($_POST["email"] == "") {
-    $status = $status . "ERROR: No email address\n";
+    $status = $status . "ERROR: No email address<br>";
 }
 else if ($_POST["email"] != filter_var($_POST["email"], FILTER_SANITIZE_EMAIL)) {
-    $status = $status . "ERROR: Email contains invalid characters\n";
+    $status = $status . "ERROR: Email contains invalid characters<br>";
 }
 else if ($_POST["email"] != filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    $status = $status . "ERROR: Invalid email address\n";
+    $status = $status . "ERROR: Invalid email address<br>";
 }
 else {
     // Fail if email already exists in database
     $testpass = $dao->getPassword($_POST["email"]);
     if ($testpass != null) {
-        $status = $status . "ERROR: Account with this email address already exists\n";
+        $status = $status . "ERROR: Account with this email address already exists<br>";
     }
 }
 
@@ -42,7 +42,7 @@ $isUsernameValid = preg_match($usernameRegex, $_POST["username"]);
 if ($isUsernameValid === 0 || $isUsernameValid === false) {
     $status = $status .
         "ERROR: Username must be 5-20 characters long, and only contain alphanumeric characters," .
-        " underscore and dot\n";
+        " underscore and dot<br>";
 }
 else {
 
@@ -54,18 +54,18 @@ else {
     // Fail is username already exists in database
     $testuser = $dao->checkUsername($_POST["username"]);
     if ($testuser) {
-        $status = $status . "ERROR: Username already exists\n";
+        $status = $status . "ERROR: Username already exists<br>";
     }
 }
 
 // Make sure that password is at least 8 characters long.
 if (strlen($_POST["password"]) < 8) {
-    $status = $status . "ERROR: Password must contain at least 8 characters\n";
+    $status = $status . "ERROR: Password must contain at least 8 characters<br>";
 }
 
 // Make sure that password re-entry matches password.
 if ($_POST["password"] != $_POST["passwordconf"]) {
-    $status = $status . "ERROR: Password re-entry must match password\n";
+    $status = $status . "ERROR: Password re-entry must match password<br>";
 }
 
 if ($status != "") {
