@@ -116,7 +116,7 @@
 
             <!-- Main body of text -->
             <div class="main">
-                <h1>A digital TRPG organizer that is actually faster than writing it down yourself!
+                <h1>A digital TTRPG organizer that is actually faster than writing it down yourself!
                     </h1>
                 <p> Note: Site is still under construction!
                 </p>

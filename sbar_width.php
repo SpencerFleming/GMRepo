@@ -11,3 +11,7 @@
 .sidebar {
     width: <?=$sbar_width?>;
 }
+
+#pushAside {
+    margin-left: <?=$sbar_width?>;
+}
