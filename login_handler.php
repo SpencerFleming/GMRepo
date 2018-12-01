@@ -40,7 +40,8 @@ if ($_POST["email"] != filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 // Time to look up the email in the DATABASE
 $dao = new Dao();
 $password = $dao->getPassword($_POST["email"]);
-if ($password != NULL && $password === hash('sha256', $_POST["password"] . $_POST["username"])) {
+if ($password != NULL && $password ===
+    hash('sha256', $_POST["password"] . $dao->getUsername($_POST["email"]))) {
     passLogin();
 }
 else {
