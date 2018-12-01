@@ -86,7 +86,7 @@ class Dao {
         $q = $conn->prepare($query);
         $q->bindParam(":username", $username);
         $q->bindParam(":email", $email);
-        $q->bindParam(":password", $password);
+        $q->bindParam(":password", sha256($password . $username));
         $q->execute();
     }
 }
