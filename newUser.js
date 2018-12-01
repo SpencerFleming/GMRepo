@@ -1,11 +1,12 @@
 function animateResize() {
+    $(".loadingCover").remove();
     $login = $(".login");
     $("<div class='loadingCover'/>").appendTo($($login).css("position", "relative"));
+    $(".loadingCover").css('opacity', '1');
     $login.wrapInner('<div/>');
     var newheight = $('div:first', $login).height();
-    $login.animate( {height: newheight}, function() {
-        $(".loadingCover").remove();
-    });
+    $(".loadingCover").css('opacity', '0');
+    $login.animate( {height: newheight} );
 }
 
 function loadNewUserPage() {
