@@ -39,9 +39,12 @@
         <script src="newUser.js"></script>
         <script src="awareFooter.js"></script>
         <title>GMRepo</title>
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Raleway"
+            rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" type="text/css" href="/theme.php">
+        <link rel="stylesheet" type="text/css" href="/sbar_width.php">
     </header>
     <body>
 
@@ -113,8 +116,7 @@
 
             <!-- Main body of text -->
             <div class="main">
-                <h1>A digital organizer that's <em>actually</em> 
-                    faster than ole' pen and paper.
+                <h1>A digital TRPG organizer that is actually faster than writing it down yourself!
                     </h1>
                 <p> Note: Site is still under construction!
                 </p>

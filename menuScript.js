@@ -3,11 +3,13 @@ sbar_width = "260px";
 function toggleMenu() {
     sbar_c_width = $("#sbar").css("width");
     if (sbar_c_width == "0px") {
+        $.post("menu_handler.php", {'sbar_width': sbar_width});
         $("#sbar").css("width", sbar_width);
         $("#pushAside").css("marginLeft", sbar_width);
         $("#menubutton").addClass("activated");
     }
     else {
+        $.post("menu_handler.php", {'sbar_width': "0px"});
         $("#sbar").css("width", "0px");
         $("#pushAside").css("marginLeft", "0px");
         $("#menubutton").removeClass("activated");

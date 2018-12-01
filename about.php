@@ -9,6 +9,8 @@ $listitems = array();
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="awareFooter.js"></script>
         <title>About GMRepo</title>
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Raleway"
+            rel="stylesheet">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="theme.php">
     </header>
