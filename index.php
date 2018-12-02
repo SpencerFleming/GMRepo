@@ -38,6 +38,7 @@
         <script src="menuScript.js"></script>
         <script src="newUser.js"></script>
         <script src="awareFooter.js"></script>
+        <script src="settingspopup.js"></script>
         <title>GMRepo</title>
         <link href="https://fonts.googleapis.com/css?family=Arvo|Raleway"
             rel="stylesheet">
@@ -55,19 +56,18 @@
             <!-- Holds user info and some control buttons -->
             <div class="userinfo">
                 <ul class="usercontrols">
+                    <!-- DEVELOPMENT ONLY url that bypasses login -->
+                    <?php if (isset($_GET["loggedIn"]) && $_GET["loggedIn"]) {
+                        $_SESSION["access_granted"] = True;
+                    } ?>
                     <?php if (isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]) { ?>
                     <li>
                         <img class="profpic" src="images/DefaultProfile.png" alt="Profile Picture"/>
                     </li>
                     <li id="settingbutton">
                         <button type="button">
-                            <i class="material-icons">settings</i>
+                            <i class="material-icons" onclick="showsettings()">settings</i>
                         </button>
-                    </li>
-                    <li>
-                        <form action="logout.php" method="POST">
-                            <input type="submit" name="logout" value="Logout">
-                        </form>
                     </li>
                     <h1> <?php echo $username; ?> </h1>
                     <?php } else { ?>
