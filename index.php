@@ -113,14 +113,16 @@
 
         <!-- Things that need to get pushed aside by sidebar -->
         <div id="pushAside">
-
-            <!-- Main body of text -->
+            <div class="browsingtabs">
+            </div>
+            <div class="browsingcontent">
+            </div>
+            <!-- Temporary -->
             <div class="main">
                 <h1>A digital TTRPG organizer that is actually faster than writing it down yourself!
                     </h1>
                 <p> Note: Site is still under construction!
                 </p>
-
             </div>
 
         </div>
