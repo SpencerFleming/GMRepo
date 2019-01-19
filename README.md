@@ -25,3 +25,7 @@ expected results.
 
 Tasks that are defined as bug-fixes will recieve exceptionally rigirous testing
 to ensure there is no regression due to the fixes.
+
+# Copyright Notice
+For the time being, I'm reserving all rights to this source code. I apoligize
+for the inconvenience!
